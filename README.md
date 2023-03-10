@@ -1,3 +1,50 @@
+# Multi-Currency Exchange API
+
+### Description
+
+The Multi-Currency Exchange API is a web-based application that enables users to exchange USD, EUR, BTC and ETH cryptocurrencies.
+
+### Technologies Used
+
+- Golang
+- GORM
+- Gin Gonic
+- Docker
+- Postgres
+
+### API endpoints
+
+The following API endpoints are avaiable in the project:
+
+- [http://localhost:8080/signup](http://localhost:8080/signup) - Create a new user
+- [http://localhost:8080/login](http://localhost:8080/login) - Login user and retrieve api token secret in cookies
+-  [http://localhost:8080/user](http://localhost:8080/user) - List all users or create a new user
+- [http://localhost:8080/user/1](http://localhost:8080/<pk>) - Retrieve, update or delete a user by ID
+- [http://localhost:8080/exchange](http://localhost:8080/exchange) - Return the exchange value
+
+### Models
+
+| User | type |
+| :--- | :--- |
+| Username | string |
+| Password | string |
+
+| Exchange | type|
+| :--- | :--- |
+| From | string |
+| To | string |
+| Ammout | float64 |
+
+### Avaiable Currencys
+
+* USD
+* EUR
+* BTC
+* ETH
+
+<br>
+
+# Challenge
 ### Objective
 
 Using Go and any framework, your task is to build a currency conversion service that includes FIAT and cryptocurrencies.

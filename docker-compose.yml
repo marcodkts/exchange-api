@@ -1,0 +1,24 @@
+version: 1.0.0
+
+services:
+  api:
+    build: .
+    entrypoint: ./entrypoint.sh
+    ports:
+      - '8080:8080'
+    volumes:
+      - .:/go/src/exchange-api
+    environment:
+      PROJECT_SERVICE_TYPE: 'api'
+    depends_on:
+      - db
+    links:
+      - db:database
+  db:
+    image: postgres:latest
+    ports:
+      - '5432:5432'
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_DB: postgres
