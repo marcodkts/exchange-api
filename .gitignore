@@ -20,3 +20,5 @@
 
 # Editor backups
 *~
+
+.env

@@ -1,18 +1,18 @@
 package models
 
 type Exchange struct {
-	From string
-	To string
-	Ammout float64
+	From   string  `form:"from" binding:"required"`
+	To     string  `form:"to" binding:"required"`
+	Amount float64 `form:"amount" binding:"required"`
 }
 
 type ExchangeRatesResponse struct {
-	Data Data `json:"data"`	
+	Data Data `json:"data"`
 }
 
 type Data struct {
 	Currency string `json:"currency"`
-	Rates Rates `json:"rates"`
+	Rates    Rates  `json:"rates"`
 }
 
 type Rates struct {

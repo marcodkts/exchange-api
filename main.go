@@ -25,7 +25,10 @@ func main() {
 	r.PUT("/user/:id", middleware.RequireAuth, controllers.UserUpdate)
 	r.DELETE("/user/:id", middleware.RequireAuth, controllers.UserDelete)
 
-	r.POST("/exchange", middleware.RequireAuth, controllers.GetExchange)
+	r.GET("/log", middleware.RequireAuth, controllers.LogIndex)
+	r.GET("/log/:id", middleware.RequireAuth, controllers.LogShow)
+
+	r.GET("/exchange", middleware.RequireAuth, controllers.GetExchange)
 
 	r.Run()
 }
